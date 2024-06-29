@@ -1,7 +1,10 @@
-
 export default function Home() {
-    return (
 
+  return (
+    <main
+      id="main"
+      className="min-h-screen bg-light text-dark dark:bg-dark dark:text-light px-4 sm:px-8 py-16 md:py-24 text-2xl"
+    >
       <section className="mx-auto max-w-5xl">
         <div className="flex flex-col md:flex-row justify-between items-center pb-12 md:pb-24">
           <div className="order-2 md:order-1 w-full md:w-2/3">
@@ -65,5 +68,6 @@ export default function Home() {
 
         <h2>Resume? CTA? More general info about my work. </h2>
       </section>
-    )
+    </main>
+  );
 }

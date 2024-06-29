@@ -1,26 +1,52 @@
-import React from 'react'
+'use client'
 import Link from 'next/link'
-import hp from '/public/img/hp1.jpg'
+import { CaretRight, Copyright } from "@phosphor-icons/react";
 
 export default function Footer() {
+    const primaryLinks = [
+        { href: '/', label: 'Home' },
+        { href: '/about/', label: 'About' },
+        { href: '/projects/', label: 'Projects' },
+        { href: '/experiments/', label: 'Experiments' },
+        { href: '/dnd-spells/', label: 'DnD Spells' }
+    ];
+
+    const secondaryLinks = [
+        { href: 'https://github.com/sidneyhopkins', label: 'Github' },
+        { href: 'https://codepen.io/sidneyhopkins/', label: 'Codepen' },
+        { href: 'https://www.linkedin.com/in/sidney-hopkins/', label: 'LinkedIn' }
+    ];
+
     return (
-        <footer className='bg-blue-200'>
-            <div className='max-w-6xl mx-auto px-4 md:px-8'>
-                <section className='flex flex-col md:flex-row items-start gap-8 md:gap-16'>
-                    <ul>
-                        <li><Link href=''>Home</Link></li>
-                        <li><Link href=''>About</Link></li>
-                        <li><Link href=''>Contact</Link></li>
-                        <li><Link href=''>Portfolio</Link></li>
+        <footer className='bg-light text-dark dark:bg-dark dark:text-light px-4 sm:px-8 py-16 md:py-24 text-lg'>
+            <div className='mx-auto max-w-5xl'>
+                <section className='flex flex-wrap items-start gap-12 md:gap-16'>
+                    <ul className='flex flex-col gap-4'>
+                        {primaryLinks.map(link => (
+                            <li key={link.href}>
+                                <Link className='hover:border-gray-500 border-b border-transparent' href={link.href}>
+                                    {link.label}
+                                </Link>
+                            </li>
+                        ))}
                     </ul>
-                    <ul>
-                        <li><Link href=''>Github</Link></li>
-                        <li><Link href=''>Codepen</Link></li>
-                        <li><Link href=''>LinkedIn</Link></li>
+                    <ul className='flex flex-col gap-4'>
+                        {secondaryLinks.map(link => (
+                            <li key={link.href}>
+                                <Link className='group/link' href={link.href}>
+                                    <span className='inline-block group-hover/link:border-gray-500 border-b border-transparent'>{link.label}</span>
+                                    <CaretRight className='group-hover/link:motion-safe:translate-x-1 duration-200 inline-block' width={24} />
+                                </Link>
+                            </li>
+                        ))}
                     </ul>
                 </section>
-                <section aria-label='copyright info' className=''>
-                    <p className=''>&#169; Copyright <span>{(new Date().getFullYear())}</span> Sidney Hopkins</p>
+                <section aria-label='copyright info' className='pt-8 text-base text-left'>
+                    <p className='flex items-center'>
+                        <span className='sr-only'>Copyright</span>
+                        <Copyright color="#ae298d" weight="duotone" size={24} className='inline-block mr-1' />
+                        {new Date().getFullYear()} Sidney Hopkins
+                    </p>
                 </section>
             </div>
         </footer>
