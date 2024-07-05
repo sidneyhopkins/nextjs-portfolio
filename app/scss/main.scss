@@ -13,13 +13,13 @@ body {
 }
 
 :focus {
-  outline: 4px solid darkblue;
+  outline: 1px solid rgb(139, 0, 93);
 }
 
 html {
   &.dark {
     :focus {
-      outline: 4px solid lightseagreen;
+      outline: 1px solid rgb(192, 121, 186);
     }
   }
 }
@@ -46,4 +46,8 @@ html {
 }
 .fluid-grid-4 {
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.nav__ul {
+  
 }

@@ -1,77 +1,74 @@
+import Project from "../components/Project";
+
+interface ProjectData {
+  title: string;
+  date: string;
+  description: string[];
+  imageUrl?: string;
+  imageAlt?: string;
+  link?: string;
+  linkText?: string;
+  reverse?: boolean;
+}
+
+const projects: ProjectData[] = [
+  {
+    title: "Webpack and Tailwind CSS Upgrades",
+    date: 'Spring 2024',
+    description: [
+      "To remedy security vulnerabilities at WebstaurantStore, I upgraded Webpack from v4 to v5 and Tailwind CSS from v1 to v3 across two repositories. These were monorepos consisting of over a dozen sites in total. The project involved extensive sifting through documentation and problem solving skills.",
+      "No sites were harmed (down) in the upgrading of these repos, I'm happy to report.",
+    ],
+    reverse: true,
+  },
+  {
+    title: "Lancaster Table & Seating",
+    date: 'Summer 2023',
+    description: [`I had the pleasure of building the redesigned Lancaster Table and Seating site. I am especially proud of the react nav's animation and seamless tabbing. This was my first full site, all subpages included.`],
+    imageUrl: "/img/LTS-chair.jpg",
+    imageAlt: 'fancy outdoor table and chair with brick walls and flowering ornimental trees in the background',
+    link: "https://www.lancastertableandseating.com",
+    linkText: 'Lancaster Table & Seating',
+  },
+  {
+    title: "Sustainability Efforts for Clark",
+    date: 'Spring 2023',
+    description: [`I built a new addition to the Clark Associates company website, the Sustainability Efforts page.`],
+    imageUrl: "/img/CA-sustain.jpg",
+    imageAlt: 'screenshot of website with sustainability statistics, articles, and a dog drinking from a cardboard cup',
+    link: "https://www.clarkassociatesinc.biz/sustainability/",
+    linkText: 'Lancaster Table & Seating',
+    reverse: true,
+  },
+  {
+    title: "Derby Day 2023",
+    date: 'Winter 2022',
+    description:[ `I front-ended the 2023 website for our annual charity event, Derby Day.`],
+    link: "https://www.clarkassociatesinc.biz/derby/",
+    linkText: 'Lancaster Table & Seating',
+  },
+];
+
 export default function Projects() {
   return (
     <section className="mx-auto max-w-5xl">
-      <h2 className="portfolio-section__heading text-6xl font-bold pb-8">
+      <h2 className="portfolio-section__heading text-6xl font-bold pb-6">
         Projects
       </h2>
-      <p className="pb-16">Here you'll find my professional work. 👩‍💻</p>
-
-      <div className="flex flex-col md:flex-row gap-8 justify-between items-center pb-16 md:pb-24">
-        <img
-          className="w-full md:w-2/5 block opacity-40"
-          src="/img/LTS-chair.jpg"
-          alt=""
+      <p className="pb-8 mb-8 border-b border-slate-100">My professional work. 👩‍💻</p>
+      {projects.map((project, index) => (
+        <Project
+          key={index}
+          title={project.title}
+          date={project.date}
+          description={project.description}
+          imageUrl={project.imageUrl}
+          imageAlt={project.imageAlt}
+          link={project.link}
+          linkText={project.linkText}
+          reverse={project.reverse}
         />
-        <div className="w-full md:w-1/2">
-          <h3 className="pb-6 font-bold text-4xl">Lancaster Table & Seating</h3>
-          <p className="pb-4 leading-9">
-            Summer 2023. I had the pleasure of building the redesigned{" "}
-            <a
-              className="underline underline-offset-4 decoration-dotted decoration-pink-300 hover:decoration-pink-80"
-              href="https://www.lancastertableandseating.com"
-            >
-              Lancaster Table and Seating site
-            </a>
-            . I am especially proud of the react nav's animation and seamless
-            tabbing. This was my first full site, all subpages included.
-          </p>
-        </div>
-      </div>
-
-      <div className="flex flex-col md:flex-row gap-8 justify-between items-center pb-16 md:pb-24">
-        <div className="order-2 md:order-1 w-full md:w-1/2">
-          <h3 className="pb-6 font-bold text-4xl">
-            Sustainability Efforts for Clark
-          </h3>
-          <p className="pb-4 leading-9">
-            Spring 2023. I built a new addition to the Clark Associates company
-            website, the{" "}
-            <a
-              className="underline underline-offset-4 decoration-dotted decoration-pink-300 hover:decoration-pink-800"
-              href="https://www.clarkassociatesinc.biz/sustainability/"
-            >
-              Sustainability Efforts page
-            </a>
-            .
-          </p>
-        </div>
-        <img
-          className="order-1 md:order-2 w-full md:w-2/5 block opacity-70"
-          src="/img/CA-sustain.jpg"
-          alt=""
-        />
-      </div>
-
-      <div className="flex flex-col md:flex-row gap-8 justify-between items-center pb-16 md:pb-24">
-        <img
-          className="w-full md:w-2/5 block opacity-70"
-          src=""
-          alt="the homepage of my first portfolio"
-        />
-        <div className="w-full md:w-1/2">
-          <h3 className="pb-6 font-bold text-4xl">Derby Day 2023</h3>
-          <p className="pb-4 leading-9">
-            Winter 2022. I front-ended the{" "}
-            <a
-              className="underline underline-offset-4 decoration-dotted decoration-pink-300 hover:decoration-pink-800"
-              href="https://www.clarkassociatesinc.biz/derby/"
-            >
-              2023 website for our annual charity event, Derby Day
-            </a>
-            .
-          </p>
-        </div>
-      </div>
+      ))}
     </section>
   );
 }
