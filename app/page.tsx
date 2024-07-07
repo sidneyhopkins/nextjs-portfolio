@@ -4,7 +4,7 @@ export default function Home() {
       <div className="flex flex-col md:flex-row justify-between items-center pb-12 md:pb-24">
         <div className="order-2 md:order-1 w-full md:w-2/3">
           <h1 className="sr-only">Sidney's portfolio</h1>
-          <p className="pb-8 text-8xl font-bold">
+          <p className="pb-8 text-7xl font-bold">
             Hi, I'm <span className="whitespace-nowrap">Sidney</span>
           </p>
           <p className="leading-9 max-w-xl text-3xl">

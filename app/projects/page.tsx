@@ -16,7 +16,7 @@ const projects: ProjectData[] = [
     title: "Webpack and Tailwind CSS Upgrades",
     date: 'Spring 2024',
     description: [
-      "To remedy security vulnerabilities at WebstaurantStore, I upgraded Webpack from v4 to v5 and Tailwind CSS from v1 to v3 across two repositories. These were monorepos consisting of over a dozen sites in total. The project involved extensive sifting through documentation and problem solving skills.",
+      "To remedy security vulnerabilities at WebstaurantStore, I upgraded Webpack from v4 to v5 and Tailwind CSS from v1 to v3 across two repositories. These were monorepos consisting of over a dozen sites in total. The project involved extensive sifting through documentation and problem solving.",
       "No sites were harmed (down) in the upgrading of these repos, I'm happy to report.",
     ],
     reverse: true,
@@ -55,7 +55,7 @@ export default function Projects() {
       <h2 className="portfolio-section__heading text-6xl font-bold pb-6">
         Projects
       </h2>
-      <p className="pb-8 mb-8 border-b border-slate-100">My professional work. 👩‍💻</p>
+      <p className="pb-8 mb-8 border-b border-slate-100">Professional work 👩‍💻</p>
       {projects.map((project, index) => (
         <Project
           key={index}
