@@ -4,7 +4,6 @@ import "./globals.css";
 import "./scss/main.scss";
 import Header from "./components/Header.jsx";
 import Footer from "./components/Footer.jsx";
-import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 

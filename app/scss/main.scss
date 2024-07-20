@@ -36,13 +36,14 @@ body {
 
 
 :focus {
-  outline: 1px solid rgb(139, 0, 93);
+  outline: 1px solid rgb(37, 21, 32);
+  outline-offset: 1px;
 }
 
 html {
   &.dark {
     :focus {
-      outline: 1px solid rgb(192, 121, 186);
+      outline: 1px solid rgb(184, 169, 182);
     }
   }
 }
@@ -69,5 +70,11 @@ html {
 }
 .fluid-grid-4 {
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+.fluid-grid-spells {
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  // @media (max-width: 639px) {
+  //   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  // }
 }
 

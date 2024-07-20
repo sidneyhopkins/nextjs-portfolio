@@ -16,7 +16,7 @@ interface ProjectProps {
   reverse?: boolean;
 }
 
-const Project: React.FC<ProjectProps> = ({ title, date, description, imageUrl, imageAlt, link, linkText, reverse }) => {
+export const Project: React.FC<ProjectProps> = ({ title, date, description, imageUrl, imageAlt, link, linkText, reverse }) => {
   const [colorIndex, setColorIndex] = useState(0);
   
   const getRandomColorClass = (max: number) => {
