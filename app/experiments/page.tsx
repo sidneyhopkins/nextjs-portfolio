@@ -11,7 +11,7 @@ const experiments: ExperimentData[] = [
   {
     title: "Reveal Cards on Scroll | ScrollMagic",
     source: "Codepen",
-    url: 'https://codepen.io/sidneyhopkins/pen/bGxeWYz',
+    url: "https://codepen.io/sidneyhopkins/pen/bGxeWYz",
     desc: [
       "ScrollMagic library experiment, fade in effect on cards. Ended up using GSAP or custom animation in favor of this.",
     ],
@@ -19,7 +19,7 @@ const experiments: ExperimentData[] = [
   {
     title: "Reveal Cards on Scroll | ScrollMagic",
     source: "Codepen",
-    url: 'https://codepen.io/sidneyhopkins/pen/bGxeWYz',
+    url: "https://codepen.io/sidneyhopkins/pen/bGxeWYz",
     desc: [
       "ScrollMagic library experiment, fade in effect on cards. Ended up using GSAP or custom animation in favor of this.",
     ],
@@ -27,7 +27,7 @@ const experiments: ExperimentData[] = [
   {
     title: "model-viewer camera-orbit",
     source: "Codepen",
-    url: 'https://codepen.io/sidneyhopkins/pen/BaORoKw',
+    url: "https://codepen.io/sidneyhopkins/pen/BaORoKw",
     desc: [
       "Spike to determine if the model-viewer library was a good choice for implementing a 3D feature section.",
     ],
@@ -35,7 +35,7 @@ const experiments: ExperimentData[] = [
   {
     title: "Reveal Cards on Scroll | ScrollMagic",
     source: "Codepen",
-    url: 'https://codepen.io/sidneyhopkins/pen/bGxeWYz',
+    url: "https://codepen.io/sidneyhopkins/pen/bGxeWYz",
     desc: [
       "ScrollMagic library experiment, fade in effect on cards. Ended up using GSAP or custom animation in favor of this.",
     ],
@@ -49,21 +49,20 @@ export default function Experiments() {
         Experiments
       </h2>
       <p className="pb-16">
-        These are some of my best attempts to solve odd problems or create
-        something special! Much of these are rough-and-ready proof of concepts.
-        They're my favorite 🩵 🪄💡
+        These are some of my attempts to solve odd problems or create something
+        special. Rough-and-ready. They're my favorite 🩵 🪄💡
       </p>
 
       <ul className="grid fluid-grid gap-4">
-      {experiments.map((item) => (
-        <ExperimentItem
-          key={item.title}
-          title={item.title}
-          source={item.source}
-          url={item.url}
-          desc={item.desc}
-        />
-      ))}
+        {experiments.map(item => (
+          <ExperimentItem
+            key={item.title}
+            title={item.title}
+            source={item.source}
+            url={item.url}
+            desc={item.desc}
+          />
+        ))}
       </ul>
     </section>
   );

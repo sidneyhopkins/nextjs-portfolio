@@ -70,7 +70,7 @@ export default function DndSpells() {
   }, [spells]);
 
   return (
-    <section className="mx-auto max-w-5xl py-8 md:py-0">
+    <section className="mx-auto max-w-5xl">
       {loading ? (
         <span className="loading">Loading...</span>
       ) : (
