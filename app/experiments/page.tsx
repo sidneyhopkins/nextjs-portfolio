@@ -16,6 +16,7 @@ const experiments: ExperimentData[] = [
       "ScrollMagic library experiment, fade in effect on cards. Ended up using GSAP or custom animation in favor of this.",
     ],
   },
+  { title: "test", source: "test", url: "test", desc: [] },
   {
     title: "Reveal Cards on Scroll | ScrollMagic",
     source: "Codepen",

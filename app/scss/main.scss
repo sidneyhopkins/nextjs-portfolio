@@ -62,7 +62,7 @@ html {
 }
 
 .nav-icon {
-  transition: all 0.3s ease;
+  transition: all 0.5s ease-out;
 }
 
 .fluid-grid {
@@ -73,8 +73,45 @@ html {
 }
 .fluid-grid-spells {
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  // @media (max-width: 639px) {
-  //   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  // }
 }
 
+.header-link {
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s ease;
+
+  &:hover {
+    @media(min-width: 640px) {
+      box-shadow: 5px 5px #558abb77; 
+
+      @media (prefers-reduced-motion: no-preference) {
+        transform: translate(-2px, -2px);
+      }
+    }
+
+    &::before {
+      transform: scaleY(1);
+      opacity: 1;
+    }
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 90%;
+    top: 5%;
+    left: -6px;
+    z-index: -1;
+    border-radius: 2px;
+    transform: scaleY(0);
+    transform-origin: center;
+    transition: all 0.2s ease-in-out;
+    background: rgb(124, 48, 79);
+    
+    @media (prefers-reduced-motion: reduce) {
+      opacity: 0;
+      transform: scaleY(1);
+    }
+  }
+}

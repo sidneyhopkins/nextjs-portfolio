@@ -3,6 +3,22 @@ import { useEffect, useState } from "react";
 import { getSpecificSpells } from "../api";
 import SpellCard from "../components/SpellCard";
 
+type SpellType = {
+  name: string;
+  level: number;
+  school: string;
+  casting_time: string;
+  range: string;
+  components: string;
+  duration: string;
+  classes: string[];
+  desc: string[];
+  ritual?: boolean;
+  concentration?: boolean;
+  target?: string;
+  higher_level: string[];
+};
+
 const spellNames = [
   "Message",
   "Mending",
@@ -24,20 +40,22 @@ const spellNames = [
 ];
 
 export default function DndSpells() {
-  const [spells, setSpells] = useState([]);
+  const [spells, setSpells] = useState<SpellType[]>([]);
   const [loading, setLoading] = useState(true);
-  const [activeSpell, setActiveSpell] = useState(null);
+  const [activeSpell, setActiveSpell] = useState<SpellType | null>(null);
 
   useEffect(() => {
     async function fetchSpells() {
       try {
         const savedSpells = localStorage.getItem("spells");
         if (savedSpells) {
-          const savedSpellList = JSON.parse(savedSpells);
+          const savedSpellList: SpellType[] = JSON.parse(savedSpells);
 
           // Check if the saved spells are the ones we need
           const hasAllSpells = spellNames.every(name =>
-            savedSpellList.some(spell => spell.name === name)
+            savedSpellList.some(
+              (spell: { name: string }) => spell.name === name
+            )
           );
 
           if (hasAllSpells) {
@@ -48,8 +66,12 @@ export default function DndSpells() {
         }
 
         // Fetch spells from the API if not found in local storage or incomplete
-        const fetchedSpells = await getSpecificSpells({ spellNames });
-        const sortedSpells = fetchedSpells.sort((a, b) => a.level - b.level);
+        const fetchedSpells: SpellType[] = await getSpecificSpells({
+          spellNames,
+        });
+        const sortedSpells: SpellType[] = fetchedSpells.sort(
+          (a, b) => a.level - b.level
+        );
         setSpells(sortedSpells);
 
         // Save to local storage
@@ -84,14 +106,18 @@ export default function DndSpells() {
                   <div className="pb-1 mb-2 border-b">
                     <h2 className="flex-shrink-0">
                       {activeSpell.name}
-                      <sup className="text-sm">{' '}{activeSpell.ritual && "(ritual)"}</sup>
+                      <sup className="text-sm">
+                        {" "}
+                        {activeSpell.ritual && "(ritual)"}
+                      </sup>
                     </h2>
 
                     <div className="flex gap-x-4 gap-y-1 flex-wrap font-bold text-xs">
                       <div>
                         {activeSpell.level > 0
                           ? `Level ${activeSpell.level}`
-                          : "Cantrip"}{"   "}
+                          : "Cantrip"}
+                        {"   "}
                       </div>
                       <div>{activeSpell.casting_time}</div>
                       <div>{activeSpell.range}</div>
@@ -109,14 +135,14 @@ export default function DndSpells() {
                         {textSection}
                       </div>
                     ))}
-                    {activeSpell.higher_level?.length > 0 && (
+                    {activeSpell.higher_level.length > 0 && (
                       <>
                         <div>Higher levels:</div>
-                        {
-                          activeSpell.higher_level?.map(textSection => (
-                            <div key={textSection} className="pb-2 last:pb-0">{textSection}</div>
-                          ))
-                        }
+                        {activeSpell.higher_level?.map(textSection => (
+                          <div key={textSection} className="pb-2 last:pb-0">
+                            {textSection}
+                          </div>
+                        ))}
                       </>
                     )}
                   </div>

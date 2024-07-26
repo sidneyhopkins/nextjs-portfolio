@@ -11,9 +11,10 @@ export default function Nav() {
     if (savedTheme) {
       document.documentElement.classList.add(savedTheme);
       setTheme(savedTheme);
-
     } else {
-      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      const prefersDark = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      ).matches;
       const initialTheme = prefersDark ? "dark" : "light";
       document.documentElement.classList.add(initialTheme);
       setTheme(initialTheme);
@@ -35,18 +36,15 @@ export default function Nav() {
     { href: "https://github.com", label: "🐈‍⬛ GitHub" },
   ];
 
-  const moonSvg = <MoonStars width={24} height={24} weight="duotone" />;
-  const sunSvg = <Sun width={24} height={24} weight="duotone" />;
-
   return (
     <header className="bg-light dark:bg-dark dark:text-light text-base md:text-xl px-3 md:px-8 py-3 md:py-12">
       <div className="max-w-5xl mx-auto flex items-stretch justify-between gap-2 md:gap-4">
         <nav className="flex items-center h-full">
-          <ul className="flex flex-col sm:flex-row flex-wrap items-stretch justify-start gap-1 sm:gap-2 md:gap-x-8 md:gap-y-4">
-            {navLinks.map((link) => (
+          <ul className="flex flex-col sm:flex-row flex-wrap items-stretch justify-start gap-1 sm:gap-4 md:gap-x-8 md:gap-y-4">
+            {navLinks.map(link => (
               <li key={link.href}>
                 <Link
-                  className="px-2 py-1 sm:px-3 sm:py-2 rounded-lg border-gray-600 border flex items-center whitespace-nowrap"
+                  className="header-link px-2 py-1 sm:px-3 sm:py-2 rounded-lg border-gray-600 border flex items-center whitespace-nowrap"
                   href={link.href}
                 >
                   {link.label}
@@ -57,10 +55,24 @@ export default function Nav() {
         </nav>
         <button
           onClick={toggleDarkMode}
-          className="bg-light self-start dark:bg-dark hover:border-gray-500 border border-gray-600 rounded-lg p-3 flex items-center"
+          className="bg-light group/button self-start dark:bg-dark hover:border-gray-900 hover:dark:border-gray-200 border border-gray-600 rounded-lg p-3 flex items-center"
           aria-label="Toggle dark mode"
         >
-          {theme === "dark" ? moonSvg : sunSvg}
+          {theme === "dark" ? (
+            <MoonStars
+              width={24}
+              height={24}
+              weight="duotone"
+              className="group-hover/button:fill-blue-500"
+            />
+          ) : (
+            <Sun
+              width={24}
+              height={24}
+              weight="duotone"
+              className="group-hover/button:fill-orange-600"
+            />
+          )}
         </button>
       </div>
     </header>
