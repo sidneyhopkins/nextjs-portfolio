@@ -10,30 +10,7 @@ html {
 body {
   margin: 0;
   font-family: "Atkinson Hyperlegible", sans-serif;
-
-  &.overlay::before {
-    content: '';
-    width: 100%;
-    height: 100%;
-    position:fixed;
-    top: 0;
-    left: 0;
-    opacity: 0.8;
-    background: rgb(118, 118, 122);
-    z-index: 1;
-    animation: 0.5s fadeIn;
-  }
 }
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 0.8;
-  }
-}
-
 
 :focus {
   outline: 1px solid rgb(37, 21, 32);
@@ -81,20 +58,14 @@ html {
   transition: all 0.3s ease;
 
   &:hover {
-    @media(min-width: 640px) {
-      box-shadow: 5px 5px #558abb77; 
-
-      @media (prefers-reduced-motion: no-preference) {
-        transform: translate(-2px, -2px);
-      }
-    }
-
+    // decorative bar on hover
     &::before {
       transform: scaleY(1);
       opacity: 1;
     }
   }
 
+  // decorative bar
   &:before {
     content: '';
     position: absolute;
@@ -107,7 +78,7 @@ html {
     transform: scaleY(0);
     transform-origin: center;
     transition: all 0.2s ease-in-out;
-    background: rgb(124, 48, 79);
+    // color set with tailwind
     
     @media (prefers-reduced-motion: reduce) {
       opacity: 0;

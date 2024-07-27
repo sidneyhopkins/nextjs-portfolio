@@ -45,7 +45,7 @@ export const Project: React.FC<ProjectProps> = ({
     >
       {imageUrl && imageAlt ? (
         <Image
-          className={`w-full md:w-2/5 block dark:opacity-70 opacity-90`}
+          className={`w-full md:w-2/5 block opacity-90`}
           src={imageUrl}
           alt={imageAlt}
           width={410}

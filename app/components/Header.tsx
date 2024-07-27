@@ -44,7 +44,7 @@ export default function Nav() {
             {navLinks.map(link => (
               <li key={link.href}>
                 <Link
-                  className="header-link px-2 py-1 sm:px-3 sm:py-2 rounded-lg border-gray-600 border flex items-center whitespace-nowrap"
+                  className="header-link before:bg-[#f17c38] dark:before:bg-[#ffcc25] dark:hover:shadow-[#003a5c] shadow-orange-500 hover:md:shadow-nav motion-safe:hover:md:-translate-x-[2px] motion-safe:hover:md:-translate-y-[2px] px-2 py-1 sm:px-3 sm:py-2 rounded-lg border-gray-600 border flex items-center whitespace-nowrap"
                   href={link.href}
                 >
                   {link.label}
@@ -55,8 +55,8 @@ export default function Nav() {
         </nav>
         <button
           onClick={toggleDarkMode}
-          className="bg-light group/button self-start dark:bg-dark hover:border-gray-900 hover:dark:border-gray-200 border border-gray-600 rounded-lg p-3 flex items-center"
-          aria-label="Toggle dark mode"
+          className="group/button hover:dark:border-gray-200 hover:border-gray-800 border border-gray-500 self-start rounded-lg p-3 flex items-center"
+          aria-label="Toggle dark or light mode"
         >
           {theme === "dark" ? (
             <MoonStars
