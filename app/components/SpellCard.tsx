@@ -1,13 +1,24 @@
 import { useState } from "react";
 import clsx from "clsx";
+import { SpellType } from "../dnd-spells/page";
 
-export default function SpellCard({ spell, setActiveSpell, activeSpell }) {
+interface SpellCardProps {
+  spell: SpellType;
+  activeSpell: SpellType | null;
+  setActiveSpell: (spell: SpellType) => void;
+}
+
+export const SpellCard: React.FC<SpellCardProps> = ({
+  spell,
+  activeSpell,
+  setActiveSpell,
+}) => {
   const [open, setOpen] = useState(false);
 
   const handleCardClick = () => {
     setActiveSpell(spell);
     setOpen(!open);
-  }
+  };
 
   return (
     <li
@@ -20,35 +31,26 @@ export default function SpellCard({ spell, setActiveSpell, activeSpell }) {
     >
       <button
         onClick={handleCardClick}
-        className={clsx("w-full h-full flex flex-col gap-1 p-4", activeSpell === spell && 'dark:sm:bg-slate-800 sm:bg-slate-100'
+        className={clsx(
+          "w-full h-full flex flex-col gap-1 p-4",
+          activeSpell === spell && "dark:sm:bg-slate-800 sm:bg-slate-100"
         )}
       >
-        <div className="text-base font-bold text-left">
-          {spell.name}
-        </div>
+        <div className="text-base font-bold text-left">{spell.name}</div>
         <div className="text-xs gap-x-3 gap-y-1 text-left">
           <div>
-            {spell.level > 0 ? `Level ${spell.level}` : "Cantrip"} {spell.ritual && '(ritual)'}
+            {spell.level > 0 ? `Level ${spell.level}` : "Cantrip"}{" "}
+            {spell.ritual && "(ritual)"}
           </div>
-          <div>
-            {spell.casting_time}
-          </div>
-          <div>
-            {spell.components}
-          </div>
-          <div>
-            Range: {spell.range}
-          </div>
-          <div>
-            {spell.concentration && "Concentration"}
-          </div>
-          <div>
-            Duration: {spell.duration}
-          </div>
+          <div>{spell.casting_time}</div>
+          <div>{spell.components}</div>
+          <div>Range: {spell.range}</div>
+          <div>{spell.concentration && "Concentration"}</div>
+          <div>Duration: {spell.duration}</div>
         </div>
 
         <div
-          className={clsx('border-t pt-2 mt-1 text-left text-xs sm:hidden', {
+          className={clsx("border-t pt-2 mt-1 text-left text-xs sm:hidden", {
             hidden: !open,
             "border-pink-600": spell.level === 0,
             "border-blue-500": spell.level === 1,
@@ -62,14 +64,14 @@ export default function SpellCard({ spell, setActiveSpell, activeSpell }) {
                 {textSection}
               </div>
             ))}
-            {spell.higher_level?.length > 0 && (
+            {spell.higher_level && spell?.higher_level.length > 0 && (
               <>
                 <div>Higher levels:</div>
-                {
-                  spell.higher_level?.map(textSection => (
-                    <div key={textSection} className="pb-2 last:pb-0">{textSection}</div>
-                  ))
-                }
+                {spell.higher_level?.map(textSection => (
+                  <div key={textSection} className="pb-2 last:pb-0">
+                    {textSection}
+                  </div>
+                ))}
               </>
             )}
           </div>
@@ -77,4 +79,6 @@ export default function SpellCard({ spell, setActiveSpell, activeSpell }) {
       </button>
     </li>
   );
-}
+};
+
+export default SpellCard;

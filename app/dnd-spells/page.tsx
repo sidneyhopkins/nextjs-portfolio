@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { getSpecificSpells } from "../api";
 import SpellCard from "../components/SpellCard";
 
-type SpellType = {
+export type SpellType = {
   name: string;
   level: number;
   school: string;
@@ -135,10 +135,10 @@ export default function DndSpells() {
                         {textSection}
                       </div>
                     ))}
-                    {activeSpell.higher_level.length > 0 && (
+                    {activeSpell.higher_level?.length > 0 && (
                       <>
                         <div>Higher levels:</div>
-                        {activeSpell.higher_level?.map(textSection => (
+                        {activeSpell.higher_level.map(textSection => (
                           <div key={textSection} className="pb-2 last:pb-0">
                             {textSection}
                           </div>

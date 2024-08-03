@@ -12,18 +12,18 @@ body {
   font-family: "Atkinson Hyperlegible", sans-serif;
 }
 
-:focus {
-  outline: 1px solid rgb(37, 21, 32);
-  outline-offset: 1px;
-}
+// :focus {
+//   outline: 1px solid rgb(37, 21, 32);
+//   outline-offset: 1px;
+// }
 
-html {
-  &.dark {
-    :focus {
-      outline: 1px solid rgb(184, 169, 182);
-    }
-  }
-}
+// html {
+//   &.dark {
+//     :focus {
+//       outline: 1px solid rgb(184, 169, 182);
+//     }
+//   }
+// }
 
 .skip-to-content {
   left: calc(50% - 100px);

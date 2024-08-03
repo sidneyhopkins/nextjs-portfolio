@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { clsx } from "clsx";
 import { CaretRight } from "@phosphor-icons/react";
 
-interface ProjectProps {
+interface ProjectItemProps {
   title: string;
   date: string;
   description: string[];
@@ -16,7 +16,7 @@ interface ProjectProps {
   reverse?: boolean;
 }
 
-export const Project: React.FC<ProjectProps> = ({
+export const ProjectItem: React.FC<ProjectItemProps> = ({
   title,
   date,
   description,
@@ -24,7 +24,6 @@ export const Project: React.FC<ProjectProps> = ({
   imageAlt,
   link,
   linkText,
-  reverse,
 }) => {
   const [colorIndex, setColorIndex] = useState(0);
 
@@ -38,14 +37,10 @@ export const Project: React.FC<ProjectProps> = ({
   }, []);
 
   return (
-    <div
-      className={`flex flex-col ${
-        reverse ? "md:flex-row-reverse" : "md:flex-row"
-      } gap-8 justify-between items-center pb-16 md:pb-24`}
-    >
+    <div className="flex flex-col odd:md:flex-row-reverse even:md:flex-row gap-8 justify-between items-center pb-16 md:pb-24">
       {imageUrl && imageAlt ? (
         <Image
-          className={`w-full md:w-2/5 block opacity-90`}
+          className="w-full md:w-2/5 block opacity-90"
           src={imageUrl}
           alt={imageAlt}
           width={410}
@@ -66,9 +61,11 @@ export const Project: React.FC<ProjectProps> = ({
         <h3 className="pb-6 font-bold text-4xl">{title}</h3>
         <div className="pb-4 leading-9">
           {description.map(item => (
-            <p key={item} className="pb-4 last:pb-0">
-              {item}
-            </p>
+            <p
+              key={item}
+              className="pb-4 last:pb-0"
+              dangerouslySetInnerHTML={{ __html: item }}
+            ></p>
           ))}
         </div>
         {link && (
@@ -88,4 +85,4 @@ export const Project: React.FC<ProjectProps> = ({
   );
 };
 
-export default Project;
+export default ProjectItem;

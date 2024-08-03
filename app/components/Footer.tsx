@@ -37,7 +37,7 @@ export default function Footer() {
             {secondaryLinks.map(link => (
               <li key={link.href}>
                 <Link className="group/link" href={link.href}>
-                  <span className="inline-block group-hover/link:border-gray-500 border-b border-transparent">
+                  <span className="group-hover/link:border-gray-500 border-b border-transparent">
                     {link.label}
                   </span>
                   <CaretRight
