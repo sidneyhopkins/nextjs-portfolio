@@ -16,11 +16,22 @@ const projects: ProjectData[] = [
     title: "Next.js and TypeScript Development",
     date: "Current",
     description: [
-      "My company is in the process of switching our marketing sites to a Next.js monorepo and using TypeScript. I'm building the first site in this repo. My responsibilities are growing in this process, and I'm grateful to be applying these technologies and learning from some incredible senior developers.",
+      "My company is in the process of switching our marketing sites to a Next.js monorepo and using TypeScript. I'm building the first site in this repo. My responsibilities are growing in this process, and I'm grateful to be applying new skills and learning from some incredible senior developers.",
       "Updates coming soon.",
     ],
     imageUrl: "/img/laptoptea.webp",
     imageAlt: "cartoon computer and mug of tea",
+  },
+  {
+    title: "This Portfolio!",
+    date: "Ongoing",
+    description: [
+      "The site you're currently visiting is a Next.js (v13 app router) project. I chose Next.js because I have professional experience with it, but also because it's an enjoyable framework for me.  If there's a feature I want to explore or a skill to improve, this is where I practice and experiment.",
+    ],
+    imageUrl: "/img/laptoptea.webp",
+    imageAlt: "cartoon computer and mug of tea",
+    link: "/dnd-spells",
+    linkText: "Want to see a fun project?",
   },
   {
     title: "Webpack and Tailwind CSS Upgrades",
@@ -36,7 +47,7 @@ const projects: ProjectData[] = [
     title: "VersaTile",
     date: "Fall 2023",
     description: [
-      "I developed an interactive 3D feature for our private label kitchen gadget that plugs into fridges. Users can interact with the model, reveal related products, and view its dimensions. Built with React and the model-viewer library, I added custom code to display dimensions directly on the model.",
+      "I developed an interactive 3D feature for my company's private label kitchen gadget that plugs into fridges. Users can interact with the model, reveal related products, and view its dimensions. Built with React and the model-viewer library, I added custom code to display dimensions directly on the model.",
       "Although leadership's interest waned, this quality work deserves a spot in my portfolio!",
     ],
     imageUrl: "/img/versatile.jpg",

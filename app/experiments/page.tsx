@@ -10,6 +10,14 @@ interface ExperimentData {
 const experiments: ExperimentData[] = [
   { title: "test", source: "test", url: "test", desc: [] },
   {
+    title: "DnD Spells",
+    source: "Personal Project",
+    url: "/dnd-spells",
+    desc: [
+      "I wasn't satisfied with the digital options for dnd spell organization, so I made my own.",
+    ],
+  },
+  {
     title: "VersaTile 3D",
     source: "Codepen",
     url: "https://codepen.io/sidneyhopkins/pen/ExOmvJy",

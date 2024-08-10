@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { clsx } from "clsx";
 import { CaretRight } from "@phosphor-icons/react";
+import parse from "html-react-parser";
 
 interface ProjectItemProps {
   title: string;
@@ -61,11 +62,9 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
         <h3 className="pb-6 font-bold text-4xl">{title}</h3>
         <div className="pb-4 leading-9">
           {description.map(item => (
-            <p
-              key={item}
-              className="pb-4 last:pb-0"
-              dangerouslySetInnerHTML={{ __html: item }}
-            ></p>
+            <p key={item} className="pb-4 last:pb-0">
+              {parse(item)}
+            </p>
           ))}
         </div>
         {link && (

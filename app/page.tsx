@@ -16,7 +16,7 @@ export default function Home() {
           <div className="order-1 md:order-2 aspect-square rounded-b-full w-5/6 md:w-1/3 md:mr-6">
             <img
               className="rounded-full object-cover aspect-square"
-              src="/img/hp.jpg"
+              src="/img/doodle4.webp"
               alt=""
             />
           </div>
