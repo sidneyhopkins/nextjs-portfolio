@@ -15,6 +15,7 @@ interface ProjectItemProps {
   link?: string;
   linkText?: string;
   reverse?: boolean;
+  target?: string;
 }
 
 export const ProjectItem: React.FC<ProjectItemProps> = ({
@@ -25,6 +26,7 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
   imageAlt,
   link,
   linkText,
+  target,
 }) => {
   const [colorIndex, setColorIndex] = useState(0);
 
@@ -71,6 +73,8 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
           <Link
             className="group/link underline underline-offset-4 decoration-dotted decoration-pink-300 hover:decoration-pink-800"
             href={link}
+            target={target}
+            rel="noopener"
           >
             {linkText}
             <CaretRight

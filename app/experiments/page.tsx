@@ -8,9 +8,8 @@ interface ExperimentData {
 }
 
 const experiments: ExperimentData[] = [
-  { title: "test", source: "test", url: "test", desc: [] },
   {
-    title: "DnD Spells",
+    title: "Personal DnD Spellbook",
     source: "Personal Project",
     url: "/dnd-spells",
     desc: [

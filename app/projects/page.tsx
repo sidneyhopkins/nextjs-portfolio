@@ -8,7 +8,7 @@ interface ProjectData {
   imageAlt?: string;
   link?: string;
   linkText?: string;
-  reverse?: boolean;
+  target?: string;
 }
 
 const projects: ProjectData[] = [
@@ -28,7 +28,7 @@ const projects: ProjectData[] = [
     description: [
       "The site you're currently visiting is a Next.js (v13 app router) project. I chose Next.js because I have professional experience with it, but also because it's an enjoyable framework for me.  If there's a feature I want to explore or a skill to improve, this is where I practice and experiment.",
     ],
-    imageUrl: "/img/laptoptea.webp",
+    imageUrl: "/img/doodle4.webp",
     imageAlt: "cartoon computer and mug of tea",
     link: "/dnd-spells",
     linkText: "Want to see a fun project?",
@@ -54,6 +54,7 @@ const projects: ProjectData[] = [
     imageAlt: "screenshot of versatile interactive 3d feature",
     link: "https://codepen.io/sidneyhopkins/details/ExOmvJy",
     linkText: "VersaTile Codepen",
+    target: "_blank",
   },
   {
     title: "Lancaster Table & Seating",
@@ -66,6 +67,7 @@ const projects: ProjectData[] = [
       "fancy outdoor table and chair with brick walls and flowering ornimental trees in the background",
     link: "https://www.lancastertableandseating.com",
     linkText: "Lancaster Table & Seating",
+    target: "_blank",
   },
   {
     title: "Sustainability Efforts for Clark",
@@ -78,6 +80,7 @@ const projects: ProjectData[] = [
       "screenshot of website with sustainability statistics, articles, and a dog drinking from a cardboard cup",
     link: "https://www.clarkassociatesinc.biz/sustainability/",
     linkText: "Clark Sustainability",
+    target: "_blank",
   },
   {
     title: "Derby Day 2023",
@@ -97,8 +100,9 @@ const projects: ProjectData[] = [
     ],
     imageUrl: "/img/first-portfolio.jpg",
     imageAlt: "screenshot of the top of Sidney's first portfolio website",
-    // link: "/projects/first-portfolio",
-    // linkText: "See first portfolio",
+    link: "https://sidneyhopkins.netlify.app/",
+    linkText: "See first portfolio",
+    target: "_blank",
   },
   {
     title: "Scribd Clone",
@@ -111,6 +115,7 @@ const projects: ProjectData[] = [
     imageAlt: "screenshot of the scribd website clone",
     link: "https://sidney-scribd-clone.netlify.app/",
     linkText: "Scribd Clone",
+    target: "_blank",
   },
 ];
 
@@ -133,7 +138,7 @@ export default function Projects() {
           imageAlt={project.imageAlt}
           link={project.link}
           linkText={project.linkText}
-          reverse={project.reverse}
+          target={project.target}
         />
       ))}
     </section>
