@@ -41,7 +41,7 @@ const projects: ProjectType[] = [
     title: "Webpack and Tailwind CSS Upgrades",
     date: "Spring 2024",
     description: [
-      "To remedy security vulnerabilities at WebstaurantStore, I upgraded Webpack from v4 to v5 and Tailwind CSS from v1 to v3 across two repositories. These were monorepos consisting of over a dozen sites in total. The project involved sifting through documentation and problem solving.",
+      "To prevent security vulnerabilities at WebstaurantStore, I upgraded Webpack from v4 to v5 and Tailwind CSS from v1 to v3 across two repositories. These were monorepos consisting of over a dozen sites in total. The project involved sifting through documentation and problem solving.",
       "No sites were harmed (down) in the upgrading of these repos, I'm happy to report.",
     ],
     imageUrl: "/img/computercoffee.webp",
