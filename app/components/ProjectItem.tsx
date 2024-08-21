@@ -5,20 +5,9 @@ import { useEffect, useState } from "react";
 import { clsx } from "clsx";
 import { CaretRight } from "@phosphor-icons/react";
 import parse from "html-react-parser";
+import { ProjectType } from "../projects/page";
 
-interface ProjectItemProps {
-  title: string;
-  date: string;
-  description: string[];
-  imageUrl?: string;
-  imageAlt?: string;
-  link?: string;
-  linkText?: string;
-  reverse?: boolean;
-  target?: string;
-}
-
-export const ProjectItem: React.FC<ProjectItemProps> = ({
+export const ProjectItem: React.FC<ProjectType> = ({
   title,
   date,
   description,
@@ -27,6 +16,8 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
   link,
   linkText,
   target,
+  codeLink,
+  codeLinkText,
 }) => {
   const [colorIndex, setColorIndex] = useState(0);
 
@@ -69,9 +60,23 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
             </p>
           ))}
         </div>
+        {codeLink && (
+          <Link
+            className="group/link block pb-2 underline underline-offset-4 decoration-dotted decoration-pink-300 hover:decoration-pink-800"
+            href={codeLink}
+            target={target}
+            rel="noopener"
+          >
+            {codeLinkText}
+            <CaretRight
+              className="group-hover/link:motion-safe:translate-x-1 duration-200 inline-block mb-1 ml-1"
+              width={20}
+            />
+          </Link>
+        )}
         {link && (
           <Link
-            className="group/link underline underline-offset-4 decoration-dotted decoration-pink-300 hover:decoration-pink-800"
+            className="group/link block underline underline-offset-4 decoration-dotted decoration-pink-300 hover:decoration-pink-800"
             href={link}
             target={target}
             rel="noopener"

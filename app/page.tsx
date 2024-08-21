@@ -1,4 +1,23 @@
+import Link from "next/link";
+
 export default function Home() {
+  const toolbox = [
+    "TypeScript",
+    "React",
+    "Next.js",
+    "Git",
+    "HTML",
+    "CSS / SCSS",
+    "Tailwind CSS",
+    "CSS Modules",
+    "JavaScript ES6",
+    "Figma",
+    "Agile",
+    "Webpack",
+    "GSAP",
+    "google/model-viewer",
+  ];
+
   return (
     <>
       <section className="mx-auto max-w-5xl">
@@ -26,60 +45,51 @@ export default function Home() {
       <section className="mx-auto max-w-5xl pt-8 md:pt-16">
         <h2 className="pb-6 font-bold text-4xl">Toolbox</h2>
         <ul className="text-left md:max-w-3xl">
-          <li className="inline-block mr-3 my-2 px-3 py-2 rounded-3xl border border-black dark:border-white">
-            Git
-          </li>
-          <li className="inline-block mr-3 my-2 px-3 py-2 rounded-3xl border border-black dark:border-white">
-            HTML
-          </li>
-          <li className="inline-block mr-3 my-2 px-3 py-2 rounded-3xl border border-black dark:border-white">
-            CSS
-          </li>
-          <li className="inline-block mr-3 my-2 px-3 py-2 rounded-3xl border border-black dark:border-white">
-            JavaScript ES6
-          </li>
-          <li className="inline-block mr-3 my-2 px-3 py-2 rounded-3xl border border-black dark:border-white">
-            TypeScript
-          </li>
-          <li className="inline-block mr-3 my-2 px-3 py-2 rounded-3xl border border-black dark:border-white">
-            NextJS
-          </li>
-          <li className="inline-block mr-3 my-2 px-3 py-2 rounded-3xl border border-black dark:border-white">
-            React
-          </li>
-          <li className="inline-block mr-3 my-2 px-3 py-2 rounded-3xl border border-black dark:border-white">
-            Tailwind
-          </li>
-          <li className="inline-block mr-3 my-2 px-3 py-2 rounded-3xl border border-black dark:border-white">
-            SASS
-          </li>
-          <li className="inline-block mr-3 my-2 px-3 py-2 rounded-3xl border border-black dark:border-white">
-            Google Fonts
-          </li>
-          <li className="inline-block mr-3 my-2 px-3 py-2 rounded-3xl border border-black dark:border-white">
-            Figma
-          </li>
-          <li className="inline-block mr-3 my-2 px-3 py-2 rounded-3xl border border-black dark:border-white">
-            Azure DevOps
-          </li>
+          {toolbox.map(item => (
+            <li
+              key={item}
+              className="inline-block mr-3 my-2 px-3 py-2 rounded-3xl border border-black dark:border-white"
+            >
+              {item}
+            </li>
+          ))}
         </ul>
       </section>
 
       <section className="mx-auto max-w-5xl pt-8 md:pt-16">
         <h2 className="pb-6 font-bold text-4xl">More about me</h2>
         <p className="text-lg pb-4">
-          As a self-taught developer with over three years of coding experience
-          and more than two years in a professional setting, I have honed my
-          skills in creating websites that are not only visually appealing but
-          also prioritize user experience, approachability, and accessibility. I
-          am committed to continuously learning how to make my code more
-          resilient, efficient, and maintainable. My passion lies in ensuring
-          that digital experiences are enjoyable and inclusive for all users,
-          making the web a better place for everyone. &#10084;
+          As a self-taught software developer with over 3 years of coding
+          experience and over 2 years of development experience in a
+          professional setting, I've honed my skills in creating websites that
+          are not only visually appealing but also prioritize user experience,
+          approachability, and accessibility. I'm committed to continuously
+          learning how to make my code more resilient, efficient, and
+          maintainable. My passion lies in ensuring that digital experiences are
+          enjoyable and inclusive for all users.
         </p>
-        <p className="text-lg">
-          My professional goal is to continue growing my technical skills while
-          building digital spaces that are both functional and beautiful.
+        <p className="text-lg pb-4">
+          Let's make the web a better place for everyone. &#10084;
+        </p>
+        <p className="text-lg pb-4">
+          If you'd like to continue the conversation,{" "}
+          <a
+            className="underline underline-offset-4 hover:no-underline"
+            href="mailto:sidhopkins14@gmail.com"
+          >
+            email me
+          </a>
+          !
+        </p>
+        <p className="text-lg pb-4">
+          Ready to see my work? Head over to{" "}
+          <Link
+            className="underline underline-offset-4 hover:no-underline group/link"
+            href="/projects"
+          >
+            my portfolio projects
+          </Link>
+          .
         </p>
       </section>
     </>

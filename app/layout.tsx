@@ -79,7 +79,7 @@ export default function RootLayout({
         <Header />
         <main
           id="main"
-          className="min-h-screen bg-light text-dark dark:bg-dark dark:text-light px-4 sm:px-8 py-8 md:py-16 lg:py-24 text-2xl"
+          className="min-h-screen bg-light text-dark dark:bg-dark dark:text-light px-4 sm:px-8 py-8 md:py-16 text-2xl"
         >
           {children}
         </main>

@@ -1,6 +1,6 @@
 import ProjectItem from "../components/ProjectItem";
 
-interface ProjectData {
+export type ProjectType = {
   title: string;
   date: string;
   description: string[];
@@ -9,9 +9,11 @@ interface ProjectData {
   link?: string;
   linkText?: string;
   target?: string;
-}
+  codeLink?: string;
+  codeLinkText?: string;
+};
 
-const projects: ProjectData[] = [
+const projects: ProjectType[] = [
   {
     title: "Next.js and TypeScript Development",
     date: "Current",
@@ -31,7 +33,9 @@ const projects: ProjectData[] = [
     imageUrl: "/img/doodle4.webp",
     imageAlt: "cartoon computer and mug of tea",
     link: "/dnd-spells",
-    linkText: "Want to see a fun project?",
+    linkText: "Want to see a fun personal project?",
+    codeLink: "https://github.com/sidneyhopkins/nextjs-portfolio/tree/main",
+    codeLinkText: "See portfolio code",
   },
   {
     title: "Webpack and Tailwind CSS Upgrades",
@@ -109,7 +113,7 @@ const projects: ProjectData[] = [
     date: "Winter 2021",
     description: [
       "This is a website clone that I built while seeking an entry-level tech job. It was a crucial project that helped me land my first frontend position.",
-      "*Scribd has changed their homepage design since I coded this.",
+      "Scribd has changed their homepage design since I coded this.",
     ],
     imageUrl: "/img/scribdclone.jpg",
     imageAlt: "screenshot of the scribd website clone",
@@ -126,7 +130,7 @@ export default function Projects() {
         Projects
       </h2>
       <p className="pb-8 mb-8 border-b border-slate-100">
-        Explore my portfolio 👩‍💻🪄
+        A summary of my work and recent projects 👩‍💻🪄
       </p>
       {projects.map(project => (
         <ProjectItem
@@ -139,6 +143,8 @@ export default function Projects() {
           link={project.link}
           linkText={project.linkText}
           target={project.target}
+          codeLink={project.codeLink}
+          codeLinkText={project.codeLinkText}
         />
       ))}
     </section>

@@ -18,7 +18,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-light text-dark dark:bg-dark dark:text-light px-4 sm:px-8 py-16 md:py-24 text-lg">
+    <footer className="bg-light text-dark dark:bg-dark dark:text-light px-4 sm:px-8 pb-8 text-lg">
       <div className="mx-auto max-w-5xl">
         <section className="flex flex-wrap items-start gap-12 md:gap-16">
           <ul className="flex flex-col gap-4">
@@ -49,17 +49,13 @@ export default function Footer() {
             ))}
           </ul>
         </section>
-        <section
-          aria-label="copyright info"
-          className="pt-8 text-base text-left"
-        >
+        <section aria-label="copyright info" className="pt-6 text-sm text-left">
           <p className="flex items-center">
             <span className="sr-only">Copyright</span>
             <Copyright
-              color="#ae298d"
-              weight="duotone"
-              size={24}
-              className="inline-block mr-1"
+              weight="thin"
+              size={16}
+              className="inline-block mr-1 fill-orange-700 dark:fill-orange-300"
             />
             {new Date().getFullYear()} Sidney Hopkins
           </p>

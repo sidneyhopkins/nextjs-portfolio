@@ -32,8 +32,8 @@ export default function Nav() {
     { href: "/", label: "💾 Home" },
     // { href: "/about/", label: "🐦 About" },
     { href: "/projects/", label: "📀 Projects" },
-    { href: "/experiments/", label: "🧩 Experiments" },
-    { href: "https://github.com", label: "🐈‍⬛ GitHub" },
+    { href: "/experiments/", label: "🦜 Experiments" },
+    { href: "https://github.com/sidneyhopkins", label: "🐈‍⬛ GitHub" },
   ];
 
   return (
