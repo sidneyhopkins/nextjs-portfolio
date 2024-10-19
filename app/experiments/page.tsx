@@ -9,6 +9,12 @@ interface ExperimentData {
 
 const experiments: ExperimentData[] = [
   {
+    title: "Atom Dot Animation",
+    source: "Codepen",
+    url: "https://codepen.io/sidneyhopkins/pen/GRbVQMz",
+    desc: ["Initial prototypes of a logo animation."],
+  },
+  {
     title: "Personal DnD Spellbook",
     source: "Personal Project",
     url: "/dnd-spells",
@@ -53,9 +59,7 @@ const experiments: ExperimentData[] = [
 export default function Experiments() {
   return (
     <section className="mx-auto max-w-5xl">
-      <h2 className="portfolio-section__heading text-6xl font-bold pb-8">
-        Experiments
-      </h2>
+      <h2 className="text-4xl md:text-6xl font-bold pb-8">Experiments</h2>
       <p className="pb-8 mb-8 border-b border-slate-400">
         These are some of my attempts to solve odd problems or create something
         special. <br />

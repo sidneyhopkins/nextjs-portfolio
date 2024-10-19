@@ -9,6 +9,7 @@ export default function Footer() {
     { href: "/projects/", label: "Projects" },
     { href: "/experiments/", label: "Experiments" },
     { href: "/dnd-spells/", label: "DnD Spells" },
+    { href: "/meditation/", label: "Meditation" },
   ];
 
   const secondaryLinks = [

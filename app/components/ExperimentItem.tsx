@@ -17,7 +17,7 @@ export const ExperimentItem: React.FC<ExperimentItemProps> = ({
     <li>
       <Link
         href={url}
-        className="hover:dark:bg-yellow-900 hover:bg-orange-300 block p-4 text-xl"
+        className="hover:dark:bg-yellow-900 hover:bg-orange-300 block p-4 text-xl h-full rounded-2xl border-4"
         rel="noopener noreferrer"
       >
         <p className="text-xs uppercase pb-2">{source}</p>

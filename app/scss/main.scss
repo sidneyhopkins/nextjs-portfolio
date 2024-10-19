@@ -12,19 +12,6 @@ body {
   font-family: "Atkinson Hyperlegible", sans-serif;
 }
 
-// :focus {
-//   outline: 1px solid rgb(37, 21, 32);
-//   outline-offset: 1px;
-// }
-
-// html {
-//   &.dark {
-//     :focus {
-//       outline: 1px solid rgb(184, 169, 182);
-//     }
-//   }
-// }
-
 .skip-to-content {
   left: calc(50% - 100px);
   position: absolute;
@@ -43,7 +30,7 @@ body {
 }
 
 .fluid-grid {
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 }
 .fluid-grid-4 {
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));

@@ -21,7 +21,8 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Sidney's Portfolio",
-    description: "Sidney Hopkins. Front-end developer portfolio website.",
+    description:
+      "Sidney Hopkins | Frontend Software Engineer | Guided Meditation Creator.",
     url: "https://sidneyhopkins.info",
     siteName: "Sidney's Portfolio",
     images: [

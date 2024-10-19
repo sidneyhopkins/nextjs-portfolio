@@ -52,7 +52,7 @@ export const ProjectItem: React.FC<ProjectType> = ({
       )}
       <div className="w-full md:w-1/2">
         <p className="text-sm uppercase pb-1">{date}</p>
-        <h3 className="pb-6 font-bold text-4xl">{title}</h3>
+        <h2 className="pb-6 font-bold text-4xl">{title}</h2>
         <div className="pb-4 leading-9">
           {description.map(item => (
             <p key={item} className="pb-4 last:pb-0">

@@ -2,6 +2,8 @@
 import { useEffect, useState } from "react";
 import { getSpecificSpells } from "../api";
 import SpellCard from "../components/SpellCard";
+import Link from "next/link";
+import Image from "next/image";
 
 export type SpellType = {
   name: string;
@@ -37,6 +39,7 @@ const spellNames = [
   "Find Steed",
   "Aura of Vitality",
   "Dispel Magic",
+  "Polymorph",
 ];
 
 export default function DndSpells() {
@@ -97,9 +100,43 @@ export default function DndSpells() {
         <span className="loading">Loading...</span>
       ) : (
         <>
-          <h1 className="pb-4 text-3xl">DnD Spells</h1>
+          <div className="flex flex-col sm:flex-row gap-12 items-center justify-between">
+            <div className="w-full sm:w-1/2 lg:w-1/3">
+              <h1 className="text-4xl font-bold">DnD Spells</h1>
+              <p className="pt-2 text-lg font-light">
+                Dream Whispers 🔮 Teifling Bard
+              </p>
+              <Image
+                className="rounded-full mx-auto mt-8 border-black border-2"
+                src="/img/dream.jpg"
+                width="250"
+                height="250"
+                alt="headshot of Sidney"
+              />
+            </div>
+            <div className="w-full sm:w-1/2 lg:w-2/3 dark:font-extralight font-medium border border-slate-500 p-4 md:p-8 rounded-lg">
+              <p className="text-base">Additional background on the project:</p>
+              <p className="pt-2 text-sm">
+                I built this because I wasn't very satisfied with the free
+                spelltracking options online and wanted to customize the layout.
+                I'm using the{" "}
+                <Link
+                  href="https://www.dnd5eapi.co/"
+                  className="underline hover:no-underline"
+                >
+                  D&D 5e API
+                </Link>
+                , which works pretty well for my needs but is missing some
+                spells from various sources that our table is using. So I have
+                some hard-coded spells as well. I'm utilizing local storage to
+                reduce the number of requests. Eventually, I'd love to add
+                spell-slot tracking and make this a publically available app
+                that anyone could use for their DnD spellcasters.
+              </p>
+            </div>
+          </div>
 
-          <div className="flex gap-2 relative">
+          <div className="flex gap-2 relative mt-8">
             <div className="border dark:border-slate-300 border-slate-500 dark:bg-slate-800 bg-slate-100 rounded-lg p-2 mb-4 w-1/2 sticky top-4 left-0 h-fit hidden sm:block">
               {activeSpell && (
                 <>

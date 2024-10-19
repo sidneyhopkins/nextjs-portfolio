@@ -29,9 +29,9 @@ export default function Nav() {
   };
 
   const navLinks = [
-    { href: "/", label: "💾 Home" },
+    { href: "/", label: "🪴 Home" },
     // { href: "/about/", label: "🐦 About" },
-    { href: "/projects/", label: "📀 Projects" },
+    { href: "/projects/", label: "💾 Projects" },
     { href: "/experiments/", label: "🦜 Experiments" },
     { href: "https://github.com/sidneyhopkins", label: "🐈‍⬛ GitHub" },
   ];

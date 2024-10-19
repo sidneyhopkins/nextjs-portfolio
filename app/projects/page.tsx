@@ -126,11 +126,9 @@ const projects: ProjectType[] = [
 export default function Projects() {
   return (
     <section className="mx-auto max-w-5xl">
-      <h2 className="portfolio-section__heading text-6xl font-bold pb-6">
-        Projects
-      </h2>
+      <h1 className="text-4xl md:text-6xl font-bold pb-6">Projects</h1>
       <p className="pb-8 mb-8 border-b border-slate-100">
-        A summary of my work and recent projects 👩‍💻🪄
+        A summary of my work and software projects 👩‍💻🪄
       </p>
       {projects.map(project => (
         <ProjectItem

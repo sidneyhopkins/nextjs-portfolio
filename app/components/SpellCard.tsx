@@ -27,17 +27,21 @@ export const SpellCard: React.FC<SpellCardProps> = ({
         "border-blue-500": spell.level === 1,
         "border-yellow-500": spell.level === 2,
         "border-green-500": spell.level === 3,
+        "border-purple-500": spell.level === 4,
+        "border-amber-500": spell.level === 5,
       })}
     >
       <button
         onClick={handleCardClick}
         className={clsx(
-          "w-full h-full flex flex-col gap-1 p-4",
+          "group w-full h-full flex flex-col gap-1 p-4",
           activeSpell === spell && "dark:sm:bg-slate-800 sm:bg-slate-100"
         )}
       >
-        <div className="text-base font-bold text-left">{spell.name}</div>
-        <div className="text-xs gap-x-3 gap-y-1 text-left">
+        <div className="group-hover:underline underline-offset-4 text-base font-semibold text-left">
+          {spell.name}
+        </div>
+        <div className="text-xs font-semibold gap-x-3 gap-y-1 text-left">
           <div>
             {spell.level > 0 ? `Level ${spell.level}` : "Cantrip"}{" "}
             {spell.ritual && "(ritual)"}
