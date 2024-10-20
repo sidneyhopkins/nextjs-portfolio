@@ -30,8 +30,7 @@ export default function Home() {
             </p>
             <p className="max-w-xl text-lg md:text-3xl md:leading-relaxed">
               I'm a self-taught frontend software engineer, meditation teacher,
-              birder, watercolor painter, ASMR artist, and mental health
-              advocate.
+              birder, watercolor painter, and mental health advocate.
             </p>
           </div>
           <div className="aspect-square rounded-b-full md:w-1/3 md:mr-6">
