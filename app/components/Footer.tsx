@@ -4,13 +4,12 @@ import { CaretRight, Copyright } from "@phosphor-icons/react";
 
 export default function Footer() {
   const primaryLinks = [
-    { href: "/", label: "Home" },
-    // { href: "/about/", label: "About" },
-    { href: "/projects/", label: "Projects" },
-    { href: "/experiments/", label: "Experiments" },
-    { href: "/dnd-spells/", label: "DnD Spells" },
-    { href: "/meditation/", label: "Meditation" },
-  ];
+      { href: '/', label: 'Home' },
+      // { href: "/about/", label: "About" },
+      { href: '/projects/', label: 'Projects' },
+      { href: '/experiments/', label: 'Experiments' },
+      { href: '/dnd-spells/', label: 'DnD Spells' },
+  ]
 
   const secondaryLinks = [
     { href: "https://github.com/sidneyhopkins", label: "Github" },
