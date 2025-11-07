@@ -1,25 +1,25 @@
-import ProjectItem from "../components/ProjectItem";
+import ProjectItem from '../components/ProjectItem'
 
 export type ProjectType = {
-  title: string;
-  date: string;
-  description: string[];
-  imageUrl?: string;
-  imageAlt?: string;
-  link?: string;
-  linkText?: string;
-  target?: string;
-  codeLink?: string;
-  codeLinkText?: string;
-};
+    title: string
+    date: string
+    description: string[]
+    imageUrl?: string
+    imageAlt?: string
+    link?: string
+    linkText?: string
+    target?: string
+    codeLink?: string
+    codeLinkText?: string
+}
 
 const projects: ProjectType[] = [
     {
         title: 'WebstaurantStore App',
         date: 'Current',
         description: [
-            "This is a high-visibility ecommerce app, with great growth on both app stores. I've picked up React Native, Expo/EAS frameworks, and have deployed some versions of this app to production.",
-            "I'm learning advanced concepts and design patterns from the senior devs on this team, and I'm grateful to expand my skillset into mobile development.",
+            'My bread and butter as of late! I help maintain and release updates for this rapidly growing React Native e-commerce app.',
+            'I’ve contributed to key features, the most notable being initial setup of Universal Links (iOS) and App Links (Android) to sync web and mobile for marketing campaigns. I regularly lead and assist with production releases to the app stores, and know my way around Expo, Google Play Console, and App Store Connect.',
         ],
         imageUrl: '/img/wssapp.png',
         imageAlt:
@@ -140,27 +140,27 @@ const projects: ProjectType[] = [
 ]
 
 export default function Projects() {
-  return (
-    <section className="mx-auto max-w-5xl">
-      <h1 className="text-4xl md:text-6xl font-bold pb-6">Projects</h1>
-      <p className="pb-8 mb-8 border-b border-slate-100">
-        A summary of my work and software projects 👩‍💻🪄
-      </p>
-      {projects.map(project => (
-        <ProjectItem
-          key={project.title}
-          title={project.title}
-          date={project.date}
-          description={project.description}
-          imageUrl={project.imageUrl}
-          imageAlt={project.imageAlt}
-          link={project.link}
-          linkText={project.linkText}
-          target={project.target}
-          codeLink={project.codeLink}
-          codeLinkText={project.codeLinkText}
-        />
-      ))}
-    </section>
-  );
+    return (
+        <section className="mx-auto max-w-5xl">
+            <h1 className="text-4xl md:text-6xl font-bold pb-6">Projects</h1>
+            <p className="pb-8 mb-8 border-b border-slate-100">
+                A summary of my work and software projects 👩‍💻🪄
+            </p>
+            {projects.map(project => (
+                <ProjectItem
+                    key={project.title}
+                    title={project.title}
+                    date={project.date}
+                    description={project.description}
+                    imageUrl={project.imageUrl}
+                    imageAlt={project.imageAlt}
+                    link={project.link}
+                    linkText={project.linkText}
+                    target={project.target}
+                    codeLink={project.codeLink}
+                    codeLinkText={project.codeLinkText}
+                />
+            ))}
+        </section>
+    )
 }

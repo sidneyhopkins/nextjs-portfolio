@@ -58,24 +58,25 @@ const experiments: ExperimentData[] = [
 
 export default function Experiments() {
   return (
-    <section className="mx-auto max-w-5xl">
-      <h2 className="text-4xl md:text-6xl font-bold pb-8">Experiments</h2>
-      <p className="pb-8 mb-8 border-b border-slate-400">
-        These are some of my attempts to solve odd problems or create something
-        special. <br />
-        Rough and ready. Enjoy 🩵 🪄💡
-      </p>
-      <ul className="grid fluid-grid gap-4">
-        {experiments.map(experiment => (
-          <ExperimentItem
-            key={experiment.title}
-            title={experiment.title}
-            source={experiment.source}
-            url={experiment.url}
-            desc={experiment.desc}
-          />
-        ))}
-      </ul>
-    </section>
-  );
+      <section className="mx-auto max-w-5xl">
+          <h2 className="text-4xl md:text-6xl font-bold pb-8">Experiments</h2>
+          <p className="pb-8 mb-8 border-b border-slate-400">
+              These are some of my attempts to solve odd problems or create
+              something special. <br />
+              Rough and ready. Hopefully not broken, I don't maintain these 🩵
+              🪄💡
+          </p>
+          <ul className="grid fluid-grid gap-4">
+              {experiments.map(experiment => (
+                  <ExperimentItem
+                      key={experiment.title}
+                      title={experiment.title}
+                      source={experiment.source}
+                      url={experiment.url}
+                      desc={experiment.desc}
+                  />
+              ))}
+          </ul>
+      </section>
+  )
 }

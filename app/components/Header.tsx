@@ -29,12 +29,11 @@ export default function Nav() {
   };
 
   const navLinks = [
-    { href: "/", label: "🪴 Home" },
-    // { href: "/about/", label: "🐦 About" },
-    { href: "/projects/", label: "💾 Projects" },
-    { href: "/experiments/", label: "🦜 Experiments" },
-    { href: "https://github.com/sidneyhopkins", label: "🐈‍⬛ GitHub" },
-  ];
+      { href: '/', label: '🪴 Home' },
+      { href: '/projects/', label: '💾 Projects' },
+      { href: '/experiments/', label: '🦜 Experiments' },
+      { href: 'https://github.com/sidneyhopkins', label: '🐈‍⬛ GitHub' },
+  ]
 
   return (
     <header className="bg-light dark:bg-dark dark:text-light text-base md:text-xl px-3 md:px-8 py-3 md:py-12">

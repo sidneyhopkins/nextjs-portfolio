@@ -6,9 +6,13 @@ export default function Home() {
       'TypeScript',
       'React',
       'React Native',
-      'Expo/EAS',
+      'Expo',
       'Next.js',
-      'Git',
+      'Component Design',
+      'Accessibility',
+      'Design Systems',
+      'TanStack Query',
+      // 'Git',
       // 'HTML',
       // 'CSS / SCSS',
       // 'Tailwind CSS',
@@ -33,13 +37,13 @@ export default function Home() {
                       </p>
                       <p className="max-w-xl text-lg md:text-3xl md:leading-relaxed">
                           I'm a self-taught frontend software engineer, crafter,
-                          game lover, birder, and watercolor painter.
+                          hiker, game lover, birder, and watercolorist.☺️
                       </p>
                   </div>
                   <div className="aspect-square rounded-b-full md:w-1/3 md:mr-6">
                       <Image
                           className="rounded-full object-cover aspect-square"
-                          src="/img/headshot.jpg"
+                          src="/img/headshot2.jpg"
                           alt=""
                           width="400"
                           height="400"
@@ -64,17 +68,14 @@ export default function Home() {
           <section className="mx-auto max-w-5xl pt-8 md:pt-16">
               <h2 className="pb-6 font-bold text-4xl">More about me</h2>
               <p className="max-w-4xl text-xl pb-4 font-light">
-                  With over 3 years of experience in tech, I've honed my skills
-                  in creating apps that prioritize user experience, robustness,
-                  and accessibility compliance. I'm committed to continuously
-                  learning how to make my code more resilient, efficient, and
-                  maintainable. It's important to me that digital experiences
-                  are headache-free and inclusive for all users. I'm keen on the
-                  human aspect of creating software, and it's a strength I'm
-                  proud to bring to the table on my teams.
-              </p>
-              <p className="text-xl pb-4">
-                  Let's make the web a better place for everyone. &#10084;
+                  With over three years of experience in software development, I
+                  build applications that prioritize user experience,
+                  accessibility, and long-term maintainability. I’m passionate
+                  about making digital experiences resilient, efficient, and
+                  inclusive—free of friction for users and developers alike. I
+                  care deeply about the human side of software, from the folks I
+                  work with to the people who rely on the products I help
+                  create. 💟
               </p>
               <p className="text-xl pb-4">
                   If you'd like to continue the conversation,{' '}

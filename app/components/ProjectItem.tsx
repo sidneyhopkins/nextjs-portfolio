@@ -22,8 +22,7 @@ export const ProjectItem: React.FC<ProjectType> = ({
   const [colorIndex, setColorIndex] = useState(0);
 
   const getRandomColorClass = (max: number) => {
-    const color = Math.floor(Math.random() * max);
-    console.log(color);
+    const color = Math.floor(Math.random() * max)
     return color;
   };
   useEffect(() => {
